@@ -21,14 +21,18 @@
 </p>
 <br>
 
-- :zap: blazingly fast
-- :drop_of_blood: bleeding edge
-- :seedling: holistic approach
-- :open_mouth: gamechanging
+<p align="center">
+:zap: Blazingly fast <br>
+:drop_of_blood: Bleeding edge <br>
+:seedling: Holistic approach <br>
+:open_mouth: Gamechanging <br>
+</p>
 
-- Project deployed to [Vercel](https://vercel.com) visit the preview [Here](https://moviebase-kohl.vercel.app/)
+<br>
 
-Click on the moviebase logo to switch between moviebase (movies) & seriesbase (series)
+- [X] Project deployed to [Vercel](https://vercel.com) visit the preview [Here](https://moviebase-kohl.vercel.app/)
+
+> Click on the moviebase logo to switch between moviebase (movies) & seriesbase (series)
 
 ## ❯ About
 
