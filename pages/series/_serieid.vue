@@ -2,7 +2,7 @@
   <!-- Loading -->
   <Loading v-if="$fetchState.pending" />
   <div v-else-if="$fetchState.error" class="fetchError">
-    <h1>Error while fetching mountains</h1>
+    <h1>Error while we fetching data</h1>
   </div>
   
   <!-- serie Info -->
