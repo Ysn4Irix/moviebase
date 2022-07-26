@@ -19,7 +19,7 @@
     <!-- Loading Animation -->
     <Loading v-if="$fetchState.pending" />
     <div v-else-if="$fetchState.error" class="fetchError"> class="section-title">
-      <h1>Error while we fetching data</h1>
+      <h1>There is an Error while we fetching data</h1>
     </div>
     <!-- Movies -->
     <div v-else class="container movies">

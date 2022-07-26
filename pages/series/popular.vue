@@ -5,7 +5,7 @@
     <!-- Loading Animation -->
     <Loading v-if="$fetchState.pending" />
     <div v-else-if="$fetchState.error" class="fetchError">
-      <h1>Error while we fetching data</h1>
+      <h1>There is an Error while we fetching data</h1>
     </div>
     <!-- Series -->
     <div v-else class="container series">

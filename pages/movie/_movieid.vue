@@ -2,7 +2,7 @@
   <!-- Loading -->
   <Loading v-if="$fetchState.pending" />
   <div v-else-if="$fetchState.error" class="fetchError">
-    <h1>Error while we fetching data</h1>
+    <h1>There is an Error while we fetching data</h1>
   </div>
   <!-- Movie Info -->
   <div v-else class="single-movie container">
