@@ -4,7 +4,7 @@
 
     <!-- Loading Animation -->
     <Loading v-if="$fetchState.pending" />
-    <div v-else-if="$fetchState.error" class="section-title">
+    <div v-else-if="$fetchState.error" class="fetchError"> class="section-title">
       <h1><span>Error</span> while fetching mountains</h1>
     </div>
     

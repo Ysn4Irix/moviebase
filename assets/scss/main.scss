@@ -27,6 +27,14 @@
   min-height: 100vh;
 }
 
+.fetchError {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .button {
   display: inline-block;
   text-decoration: none;

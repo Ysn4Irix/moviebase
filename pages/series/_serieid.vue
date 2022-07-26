@@ -1,8 +1,8 @@
 <template>
   <!-- Loading -->
   <Loading v-if="$fetchState.pending" />
-  <div v-else-if="$fetchState.error" class="section-title">
-    <h1><span>Error</span> while fetching mountains</h1>
+  <div v-else-if="$fetchState.error" class="fetchError">
+    <h1>Error while fetching mountains</h1>
   </div>
   
   <!-- serie Info -->
