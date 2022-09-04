@@ -65,4 +65,7 @@ export default {
   serverMiddleware: [`~/serverMiddleware/moviebase`],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  server: {
+    port: 9560,
+  },
 }
