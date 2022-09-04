@@ -7,7 +7,7 @@
     <div v-else-if="$fetchState.error" class="fetchError">
       <h1>There is an Error while we fetching data</h1>
     </div>
-    
+
     <!-- Movies -->
     <div v-else class="container movies">
       <div class="section-title">
@@ -97,9 +97,7 @@ export default {
   methods: {
     async getTrendingMovies() {
       const data = (
-        await this.$axios.get(
-          `/trending/movie/week?api_key=${process.env.NUXT_ENV_API_KEY}&language=en-US&page=1`
-        )
+        await this.$axios.get(`/moviebase/api/trending`)
       ).data
 
       data.results.forEach((movie) => {

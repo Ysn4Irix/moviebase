@@ -88,7 +88,7 @@ export default {
     async getSingleMovie() {
       const data = (
         await this.$axios.get(
-          `/movie/${this.$route.params.movieid}?api_key=${process.env.NUXT_ENV_API_KEY}&language=en-US`
+          `/moviebase/api/movie/${this.$route.params.movieid}`
         )
       ).data
 
@@ -97,7 +97,7 @@ export default {
     async getTrailerVideo() {
       const data = (
         await this.$axios.get(
-          `/movie/${this.$route.params.movieid}/videos?api_key=${process.env.NUXT_ENV_API_KEY}&language=en-US`
+          `/moviebase/api/movie/trailer/${this.$route.params.movieid}`
         )
       ).data
 

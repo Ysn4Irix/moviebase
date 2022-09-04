@@ -5,34 +5,35 @@ export default {
     htmlAttrs: {
       lang: 'en',
     },
-    meta: [{
-        charset: 'utf-8'
+    meta: [
+      {
+        charset: 'utf-8',
       },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        content: 'width=device-width, initial-scale=1',
       },
       {
         hid: 'description',
         name: 'description',
-        content: 'A web application for exploring latest movies & shows in Theaters using TMDB API'
+        content:
+          'A web application for exploring latest movies & shows in Theaters using TMDB API',
       },
       {
         name: 'format-detection',
-        content: 'telephone=no'
+        content: 'telephone=no',
       },
     ],
-    link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    }],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico',
+      },
+    ],
   },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '@/assets/scss/main',
-  ],
+  css: ['@/assets/scss/main'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -50,14 +51,18 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/dotenv',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: process.env.NUXT_ENV_BASE_URL,
+    baseURL:
+      process.env.NODE_ENV === 'production'
+        ? process.env.BASE_URL
+        : process.env.DEP_URL,
   },
-
+  serverMiddleware: [`~/serverMiddleware/moviebase`],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }

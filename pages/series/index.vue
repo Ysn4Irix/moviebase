@@ -21,7 +21,7 @@
     <div v-else-if="$fetchState.error" class="fetchError">
       <h1>There is an Error while we fetching data</h1>
     </div>
-    
+
     <!-- Series -->
     <div v-else class="container series">
       <div v-if="searchInput !== ''" class="serie-section-title">
@@ -169,7 +169,7 @@ export default {
     async nowStreamingSeries() {
       const data = (
         await this.$axios.get(
-          `/tv/on_the_air?api_key=${process.env.NUXT_ENV_API_KEY}&language=en-US&page=1`
+          `/moviebase/api/series/ontheair`
         )
       ).data
 
@@ -177,21 +177,10 @@ export default {
         this.nowStreamngSeries.push(serie)
       })
     },
-    async getpopularSeries() {
-      const data = (
-        await this.$axios.get(
-          `/tv/popular?api_key=${process.env.NUXT_ENV_API_KEY}&language=en-US&page=1`
-        )
-      ).data
-
-      data.results.forEach((serie) => {
-        this.popularSeries.push(serie)
-      })
-    },
     async searchedserie() {
       const data = (
         await this.$axios.get(
-          `/search/tv?api_key=${process.env.NUXT_ENV_API_KEY}&language=en-US&page=1&query=${this.searchInput}`
+          `/moviebase/api/series/search/${this.searchInput}`
         )
       ).data
       data.results.forEach((serie) => {

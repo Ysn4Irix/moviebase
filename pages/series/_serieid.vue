@@ -4,7 +4,7 @@
   <div v-else-if="$fetchState.error" class="fetchError">
     <h1>There is an Error while we fetching data</h1>
   </div>
-  
+
   <!-- serie Info -->
   <div v-else class="single-serie container">
     <NuxtLink class="serie-button" :to="{ name: 'series' }"> Back </NuxtLink>
@@ -101,7 +101,7 @@ export default {
     async getSingleSerie() {
       const data = (
         await this.$axios.get(
-          `/tv/${this.$route.params.serieid}?api_key=${process.env.NUXT_ENV_API_KEY}&language=en-US`
+          `/moviebase/api/series/show/${this.$route.params.serieid}`
         )
       ).data
 
@@ -110,7 +110,7 @@ export default {
     async getTrailerVideo() {
       const data = (
         await this.$axios.get(
-          `/tv/${this.$route.params.serieid}/videos?api_key=${process.env.NUXT_ENV_API_KEY}&language=en-US`
+          `/moviebase/api/series/show/trailer/${this.$route.params.serieid}`
         )
       ).data
 

@@ -18,7 +18,7 @@
 
     <!-- Loading Animation -->
     <Loading v-if="$fetchState.pending" />
-    <div v-else-if="$fetchState.error" class="fetchError"> class="section-title">
+    <div v-else-if="$fetchState.error" class="fetchError">
       <h1>There is an Error while we fetching data</h1>
     </div>
     <!-- Movies -->
@@ -159,30 +159,17 @@ export default {
   methods: {
     async nowStreamingMovies() {
       const data = (
-        await this.$axios.get(
-          `/movie/now_playing?api_key=${process.env.NUXT_ENV_API_KEY}&language=en-US&page=1`
-        )
+        await this.$axios.get(`/moviebase/api/now`)
       ).data
 
       data.results.forEach((movie) => {
         this.nowStreamngMovies.push(movie)
       })
     },
-    async gettrendingMovies() {
-      const data = (
-        await this.$axios.get(
-          `/trending/movie/week/?api_key=${process.env.NUXT_ENV_API_KEY}&language=en-US&page=1`
-        )
-      ).data
-
-      data.results.forEach((movie) => {
-        this.trendingMovies.push(movie)
-      })
-    },
     async searchedMovie() {
       const data = (
         await this.$axios.get(
-          `/search/movie?api_key=${process.env.NUXT_ENV_API_KEY}&language=en-US&page=1&query=${this.searchInput}`
+          `/moviebase/api/search/${this.searchInput}`
         )
       ).data
       data.results.forEach((movie) => {

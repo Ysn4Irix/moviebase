@@ -69,7 +69,7 @@ export default {
     }
   },
   async fetch() {
-    await this.getPopularseries()
+    await this.getPopularSeries()
   },
   fetchDelay: 2000,
   head() {
@@ -90,10 +90,10 @@ export default {
     }
   },
   methods: {
-    async getPopularseries() {
+    async getPopularSeries() {
       const data = (
         await this.$axios.get(
-          `/tv/popular?api_key=${process.env.NUXT_ENV_API_KEY}&language=en-US&page=1`
+          `/moviebase/api/series/popular`
         )
       ).data
 
