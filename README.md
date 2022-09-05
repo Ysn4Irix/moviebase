@@ -30,8 +30,6 @@
 
 <br>
 
-- [X] Project deployed to [Vercel](https://vercel.com) visit the preview [Here](https://moviebase-kohl.vercel.app/)
-
 > Click on the moviebase logo to switch between moviebase (movies) & seriesbase (series)
 
 ## ❯ About
