@@ -9,7 +9,8 @@ WORKDIR /app
 COPY package.json ./
 RUN npm install
 COPY . .
-RUN npm run build && npm install --production
+RUN npm run build
+ENV NODE_ENV production
 ENV HOST 0.0.0.0
 ENV PORT 80
 EXPOSE 80
