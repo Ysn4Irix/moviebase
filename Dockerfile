@@ -1,0 +1,15 @@
+FROM --platform=arm64 node:18-alpine
+ARG DEP_URL=${DEP_URL}
+ENV DEP_URL=${DEP_URL}
+ARG TMDB_API_URL=${TMDB_API_URL}
+ENV TMDB_API_URL=${TMDB_API_URL}
+ARG TMDB_API_KEY=${TMDB_API_KEY}
+ENV TMDB_API_KEY=${TMDB_API_KEY}
+WORKDIR /app
+COPY package.json ./
+RUN npm install
+COPY . .
+RUN npm run build && npm prune --production
+ENV PORT 80
+EXPOSE 80
+CMD ["npm", "start"]
