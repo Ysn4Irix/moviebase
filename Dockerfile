@@ -7,10 +7,9 @@ ARG TMDB_API_KEY=${TMDB_API_KEY}
 ENV TMDB_API_KEY=${TMDB_API_KEY}
 WORKDIR /app
 COPY package.json ./
-RUN npm install -g pnpm
-RUN pnpm install
+RUN npm install
 COPY . .
-RUN pnpm run build && pnpm prune --prod
+RUN npm run build && npm prune --production
 ENV HOST 0.0.0.0
 ENV PORT 3000
 EXPOSE 3000
